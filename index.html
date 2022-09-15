@@ -1,0 +1,267 @@
+dl<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EX4DOM</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Atividade Prática Individual</h1>
+    <h2>1 Ordenação</h2>
+    <p>
+      Crie um script que preencha a tabela com valores. Depois crie outro script
+      que ordene os valores da tabela
+    </p>
+    <table id="t1">
+      <th>Valores</th>
+      <tr>
+        <td class="random">00,00</td>
+      </tr>
+      <tr>
+        <td class="random">00,00</td>
+      </tr>
+      <tr>
+        <td class="random">00,00</td>
+      </tr>
+    </table>
+    <!-----------------Resposta do Exercício 1------------>
+
+    <script>
+      const valor = document.querySelectorAll(".random")
+      for(i = 0; i < valor.length; i++){
+        valor[i].innerHTML = Math.trunc(Math.random() * 10)
+      }
+    </script>
+
+    <!---------------------------------------------------->
+    <h2>2 Cores</h2>
+    <p>
+      Crie um script que gere uma cor aleatória em rgb e a apresente em um li
+      dentro da lista abaixo, deve-se, também, criar um gradiente linear de
+      branco até esta cor como cor de fundo do li.
+    </p>
+    <ul id="lista-cores" style="list-style: none; padding: 0">
+      <li id="gradient">
+
+      </li>
+    </ul>
+
+
+    <!-----------------Resposta do Exercício 2------------>
+
+    <script>
+      const caixa = document.getElementById("gradient")
+      let cor1 = Math.random() * 255
+      let cor2 = Math.random() * 255
+      let cor3 = Math.random() * 255
+      let cor = caixa.style.backgroundColor = "rgb( "+ cor1 +", "+ cor2 +", "+ cor3 +")"
+      caixa.style.backgroundImage = "linear-grandient(white, "+ cor +")"
+    </script>
+
+    <!---------------------------------------------------->
+
+    <h2>3 Países</h2>
+    <p>
+      Crie um script que encontre o país com o maior nome e o apresente em uma
+      div azul abaixo da tabela, e risque o pais com o menor nome, colocando sua
+      letra em vermelha
+    </p>
+    <table id="t2">
+      <th>País</th>
+      <tr>
+        <td class="pais">Brasil</td>
+      </tr>
+      <tr>
+        <td class="pais">Honduras</td>
+      </tr>
+      <tr>
+        <td class="pais">Peru</td>
+      </tr>
+      <tr>
+        <td class="pais">Alemanha</td>
+      </tr>
+      <tr>
+        <td class="pais">China</td>
+      </tr>
+      <tr>
+        <td class="pais">Rússia</td>
+      </tr>
+      <tr>
+        <td class="pais">Itália</td>
+      </tr>
+      <tr>
+        <td class="pais">Indonésia</td>
+      </tr>
+      <tr>
+        <td class="pais">Espanha</td>
+      </tr>
+      <tr>
+        <td class="pais">Cazaquistão</td>
+      </tr>
+      <tr>
+        <td class="pais">Chile</td>
+      </tr>
+      <tr>
+        <td class="pais">Argentina</td>
+      </tr>
+      <tr>
+        <td class="pais">Croácia</td>
+      </tr>
+      <tr>
+        <td class="pais">Portugal</td>
+      </tr>
+      <tr>
+        <td class="pais">Venezuela</td>
+      </tr>
+      <tr>
+        <td class="pais">Costa do Marfim</td>
+      </tr>
+      <tr>
+        <td class="pais">Congo</td>
+      </tr>
+      <tr>
+        <td class="pais">México</td>
+      </tr>
+    </table>
+    <div id="paisMaior"></div>
+
+    <!-----------------Resposta do Exercício 3------------>
+
+    <script>
+      const letras = document.getElementsByClassName("pais")
+      
+    </script>
+
+    <!---------------------------------------------------->
+
+    <h2>4 Autopreenchimento</h2>
+    <p>
+      Crie um script que escolha aleatóriamente um nome presente na lista de
+      nomes abaixo e preencha o campo de email com um email composto por
+      'nome@gmail.com'. Além disso, deve-se criar uma senha contendo as inicias
+      de todos os nomes da lista, a começar do último ao primeiro
+    </p>
+    <p>Lista de Nomes</p>
+    <ul id="lista-nomes">
+      <li>Vanessa</li>
+      <li>Luan</li>
+      <li>Carlos</li>
+      <li>Adalberto</li>
+      <li>Jefferson</li>
+      <li>Giovanna</li>
+      <li>Renata</li>
+      <li>Kleber</li>
+      <li>Tatiane</li>
+      <li>Ronaldo</li>
+      <li>Hugo</li>
+      <li>Nilson</li>
+      <li>Santos</li>
+      <li>Marcia</li>
+      <li>Leticia</li>
+      <li>Paula</li>
+      <li>Katarina</li>
+      <li>Artur</li>
+      <li>Henrique</li>
+      <li>Lilian</li>
+    </ul>
+    <form action="#" id="form-preenchimento">
+      <input type="email" placeholder="Email" id="email" />
+      <input type="text" placeholder="Senha" id="senha" />
+    </form>
+
+    <!-----------------Resposta do Exercício 4------------>
+
+    <script>
+      let nome = Math.trunc(Math.random() * 20)
+      const email = document.getElementById("email")
+      const senha = document.getElementById("senha")
+      console.log(document.getElementsByTagName("input")[0])
+      switch(nome){
+        case 1:
+          email.innerHTML = "Vanessa@gmail.com"
+          senha.innerHTML = "vanessa123"
+          break
+        case 2:
+          email.innerHTML = "Luan@hotmail.com"
+          senha.innerHTML = "luan123"
+          break
+        case 3:
+          email.innerHTML = "Carlos@gmail.com"
+          senha.innerHTML = "carlos123"
+          break
+        case 4:
+          email.innerHTML = "Adalberto@gmail.com"
+          senha.innerHTML = "adalberto123"
+          break
+        case 5:
+          email.innerHTML = "Jefersson@gmail.com"
+          senha.innerHTML = "jefersson123"
+          break
+        case 6:
+          email.innerHTML = "Giovanna@gmail.com"
+          senha.innerHTML = "giovana123"
+          break
+        case 7:
+          email.innerHTML = "Renata@gmail.com"
+          senha.innerHTML = "renata123"
+          break
+        case 8:
+          email.innerHTML = "Kleber@gmail.com"
+          senha.innerHTML = "Kleber"
+          break
+        case 9:
+          email.innerHTML = "Tatiane@gmail.com"
+          senha.innerHTML = "tati123"
+          break
+        case 10:
+          email.innerHTML = "Ronaldo@gmail.com"
+          senha.innerHTML = "ronaldo123"
+          break
+        case 11:
+          email.innerHTML = "Hugo@gmail.com"
+          senha.innerHTML = "hugo123"
+          break
+        case 12:
+          email.innerHTML = "Nilson@gmail.com"
+          senha.innerHTML = "nilson123"
+          break
+        case 13:
+          email.innerHTML = "Santos@gmail.com"
+          senha.innerHTML = "santos123"
+          break
+        case 14:
+          email.innerHTML = "Marcia@gmail.com"
+          senha.innerHTML = "marcia123"
+          break
+        case 15:
+          email.innerHTML = "Leticia@gmail.com"
+          senha.innerHTML = "leticia123"
+          break
+        case 16:
+          email.innerHTML = "Paula@gmail.com"
+          senha.innerHTML = "paula123"
+          break
+        case 17:
+          email.innerHTML = "Katarina@gmail.com"
+          senha.innerHTML = "katarina123"
+          break
+        case 18:
+          email.innerHTML = "Arthur@gmail.com"
+          senha.innerHTML = "arthur123"
+          break
+        case 19:
+          email.innerHTML = "Henrique@gmail.com"
+          senha.innerHTML = "henrique123"
+          break
+        case 20:
+          email.innerHTML = "Lilian@gmail.com"
+          senha.innerHTML = "lili123"
+
+      }
+    </script>
+
+    <!---------------------------------------------------->
+  </body>
+</html>
